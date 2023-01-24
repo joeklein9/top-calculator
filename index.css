@@ -1,0 +1,120 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.calculator {
+    height:600px;
+    width: 350px;
+    border:5px solid black;
+    background-color:aquamarine;
+    border-radius: 5%;
+    box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+.screen {
+    border: 2px solid black;
+    position:relative;
+    border-radius:5%;
+    background-color:whitesmoke;
+    height:100px;
+    width:300px;
+    margin:10px auto;
+    text-align: right;
+    box-shadow: 3px 3px 5px 6px black;
+}
+
+.first-screen-text {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size:25px;
+    color:teal;
+}
+
+.second-screen-text {
+    position: absolute;
+    top: 50px;
+    right: 15px;
+    font-size:30px;
+    color:black;
+    
+}
+
+.buttons {
+    display:flex;
+    flex-direction:column;
+    align-items:center; 
+    height:350px;
+    width:300px;
+    margin:10px auto;
+    
+}
+
+.operator-btn {
+    background-color:blue;
+}
+
+button:active {
+  outline: none;
+}
+
+.buttons-row-one {
+    display:flex;
+    height:100px; 
+    width:300px; 
+    justify-content: space-around; 
+}
+
+#clear, #delete {
+    width:100px;
+    margin:20px;
+    padding: 20px;
+    width:250px;
+    border: 2px solid;
+    border-radius: 5px;
+    background-color: var(--btn);
+    font-size: 20px;
+    background-color:whitesmoke;
+    box-shadow: 3px 3px 5px 6px black;
+}
+
+#clear:hover, #delete:hover {
+    background-color: lightblue;
+}
+
+.buttons-row-two, .buttons-row-three, .buttons-row-four, .buttons-row-five {
+    display:flex;
+    justify-content: space-around;
+    height:80px;
+    width:300px;
+    margin:10px;
+} 
+
+.normal-button {
+  padding: 20px;
+  width:60px;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: var(--btn);
+  font-size: 20px;
+  background-color:whitesmoke;
+  box-shadow: 3px 3px 5px 6px black;
+  
+  
+}
+
+
+.normal-button:hover {
+    background-color: lightblue;
+}
