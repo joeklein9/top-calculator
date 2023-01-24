@@ -7,16 +7,19 @@ let secondOperand = ""
 let selectedOperator = ""
 let isOperatorSelected = false 
 
+let firstOperandArray = []
+let secondOperandArray = []
+
 
 // Handle click on a number
 
 function handleNumberClick () {
      
     if (isOperatorSelected === false){
-        firstOperand = event.target.dataset.number
+        firstOperandArray.push(event.target.dataset.number)
         renderFirstOperand()   
     } else if (isOperatorSelected === true) {
-        secondOperand = event.target.dataset.number
+        secondOperandArray.push(event.target.dataset.number)
         renderSecondOperand()
     }
 }
@@ -39,14 +42,16 @@ function handleEqualsClick () {
 
  
 if (selectedOperator === "+") {
-    return Number(firstOperand) + Number(secondOperand)
+    return Number(firstOperandArray.join('')) + Number(secondOperandArray.join(''))
 } else if (selectedOperator === "-") {
-    return Number(firstOperand) - Number(secondOperand)
+    return Number(firstOperandArray.join('')) - Number(secondOperandArray.join(''))
 } else if (selectedOperator === "÷") {
-    return Number(firstOperand) / Number(secondOperand)
+    return Number(firstOperandArray.join('')) / Number(secondOperandArray.join(''))
 } else if (selectedOperator === "×") {
-    return Number(firstOperand) * Number(secondOperand)
+    return Number(firstOperandArray.join('')) * Number(secondOperandArray.join(''))
 }
+
+isOperatorSelected = false
 }
 
 // Event listener for whole page for number presses and operator presses
@@ -63,8 +68,8 @@ document.addEventListener("click", function (event){
         renderEquals()
     }
     else if (event.target.dataset.clear) {
-        firstOperand = ""
-        secondOperand = ""
+        firstOperandArray = []
+        secondOperandArray = []
         firstScreenDisplay.textContent = ""
         secondScreenDisplay.textContent = ""
         isOperatorSelected = false
@@ -76,18 +81,26 @@ document.addEventListener("click", function (event){
 // Render firstOperand to screen 
 
 function renderFirstOperand () {
-    firstScreenDisplay.textContent += firstOperand
-    console.log ("this is the first operand")
+    for (let i = 0; i<firstOperandArray.length; i++) {
+
+        if (i === firstOperandArray.length - 1) {
+      
+        firstScreenDisplay.textContent += firstOperandArray[i]
+    }
+}
 }
 
 //Render second operand to screen 
 
 function renderSecondOperand () {
-    firstScreenDisplay.textContent += secondOperand
-    console.log("this is the second operand")
-    
-}
+    for (let i = 0; i<secondOperandArray.length; i++) {
 
+        if (i === secondOperandArray.length - 1) {
+      
+        firstScreenDisplay.textContent += secondOperandArray[i]
+    }
+}
+}
 // Render operator to screen 
 
 function renderOperator () {
